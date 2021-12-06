@@ -1,0 +1,28 @@
+/* Brand color // #339af0 brand color */
+
+.home {
+  height: 100vh;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.primary-heading {
+}
+
+.primary-content {
+}
+
+.btn {
+}
+
+.btn--login {
+}
+
+.btn--signup {
+}

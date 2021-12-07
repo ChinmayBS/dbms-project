@@ -1,6 +1,7 @@
-import "./HomePage.css";
+
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
+import "./HomePage.css";
 
 export default function HomePage() {
   const loadSignupPage = () => {
@@ -19,12 +20,14 @@ export default function HomePage() {
           in creating an online marketplace for street vendors with their
           customers and make your business more attractive and profitable.
         </p>
-        <button className="btn btn--signup" onClick={loadSignupPage}>
-          Signup
-        </button>
-        <button className="btn btn--login" onClick={loadLoginPage}>
-          Login
-        </button>
+        <div>
+          <button className="btn btn--signup" onClick={loadSignupPage}>
+            Signup
+          </button>
+          <button className="btn btn--login" onClick={loadLoginPage}>
+            Login
+          </button>
+        </div>
       </div>
       <div>
         <img className="img-fluid img" src="images/hero-img.jpg"></img>

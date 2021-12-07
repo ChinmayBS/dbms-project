@@ -10,26 +10,32 @@
 }
 
 .img {
-  width: 2200px;
+  width: 2500px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  width: 78%;                                                 /*edit*/
   gap: 12px;
 }
 
 .primary-heading {
+  font-size: xx-large;
+  font-weight: 800;
 }
 
 .primary-content {
+  font-size: medium;
 }
 
 .btn {
   margin-bottom: 12px;
+  width: 50%;
 }
 
 .btn--login {
+  width: 50%;
 }
 
 .btn--signup {

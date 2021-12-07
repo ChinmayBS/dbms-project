@@ -14,18 +14,18 @@ export default function HomePage() {
   return (
     <div className="container d-flex home">
       <div className=" content">
-        <h1 className="primary-heading h1">Love Street Foods</h1>
+        <h1 className="primary-heading h1">Love Street Foods?</h1>
         <p className="primary-content">
           Let's make street food service more organized and favourable. Join us
-          in creating an online marketplace for street vendors with their
+          in an online marketplace for street vendors with your
           customers and make your business more attractive and profitable.
         </p>
         <div>
-          <button className="btn btn--signup" onClick={loadSignupPage}>
-            Signup
+          <button className="btn btn--know-more" onClick={loadSignupPage}>
+            Know more
           </button>
-          <button className="btn btn--login" onClick={loadLoginPage}>
-            Login
+          <button className="btn btn--signup" onClick={loadLoginPage}>
+            SignUp
           </button>
         </div>
       </div>

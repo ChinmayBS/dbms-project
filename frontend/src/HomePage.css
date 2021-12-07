@@ -3,13 +3,20 @@
 .home {
   height: 100vh;
   background-color: aquamarine;
-  display: flex;
   align-items: center;
+  gap: 2rem;
+  /* flex-grow: 1;
+  flex-basis: 0; */
+}
+
+.img {
+  width: 2200px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 
 .primary-heading {
@@ -19,10 +26,12 @@
 }
 
 .btn {
+  margin-bottom: 12px;
 }
 
 .btn--login {
 }
 
 .btn--signup {
+  color: #3390f0;
 }

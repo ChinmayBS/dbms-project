@@ -18,7 +18,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::app-user.app-user",
-      "inversedBy": "phone_no"
+      "mappedBy": "phone_no"
     }
   }
 }

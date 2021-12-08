@@ -38,6 +38,11 @@
       "relation": "oneToOne",
       "target": "api::phone-no.phone-no",
       "inversedBy": "app_user"
+    },
+    "user_name": {
+      "type": "string",
+      "unique": true,
+      "required": true
     }
   }
 }

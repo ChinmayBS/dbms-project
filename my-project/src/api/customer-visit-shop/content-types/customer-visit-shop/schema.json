@@ -21,7 +21,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::customer.customer",
-      "inversedBy": "customer_visit_shop"
+      "mappedBy": "customer_visit_shop"
     },
     "shop": {
       "type": "relation",

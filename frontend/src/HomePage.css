@@ -7,7 +7,7 @@
   gap: 2rem;
   /* flex-grow: 1;
   flex-basis: 0; */
-}
+} 
 
 .img {
   width: 2500px;
@@ -16,7 +16,8 @@
 .content {
   display: flex;
   flex-direction: column;
-  width: 78%;                                                 /*edit*/
+  width: 85%;                                                 /*edit*/
+  text-align: justify;
   gap: 12px;
 }
 
@@ -31,13 +32,20 @@
 
 .btn {
   margin-bottom: 12px;
-  width: 50%;
+  width: 45%;
 }
 
-.btn--login {
+.btn--know-more {
+  color: #bde0fe;
   width: 50%;
+  background-color: #168aad; 
+  border-radius: 15px;
+  margin-right: 10px;
 }
 
 .btn--signup {
   color: #3390f0;
+  border-color: #168aad;
+  border-radius: 15px;
+  border-width: 2px;
 }

@@ -1,51 +1,56 @@
 /* Brand color // #339af0 brand color */
 
 .home {
-  height: 100vh;
-  background-color: aquamarine;
-  align-items: center;
-  gap: 2rem;
-  /* flex-grow: 1;
+    height: 100vh;
+    background-color: aquamarine;
+    align-items: center;
+    gap: 2rem;
+    /* flex-grow: 1;
   flex-basis: 0; */
-} 
+}
 
 .img {
-  width: 2500px;
+    width: 2500px;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  width: 85%;                                                 /*edit*/
-  text-align: justify;
-  gap: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    /*edit*/
+    text-align: justify;
+    gap: 12px;
 }
 
 .primary-heading {
-  font-size: xx-large;
-  font-weight: 800;
+    font-size: xx-large;
+    font-weight: 800;
 }
 
 .primary-content {
-  font-size: medium;
+    font-size: medium;
 }
 
 .btn {
-  margin-bottom: 12px;
-  width: 45%;
+    margin-bottom: 12px;
+    width: 45%;
 }
 
-.btn--know-more {
-  color: #bde0fe;
-  width: 50%;
-  background-color: #168aad; 
-  border-radius: 15px;
-  margin-right: 10px;
+.btn--login {
+    color: #bde0fe;
+    width: 50%;
+    border-color: #168aad;
+    border-width: 3px;
+    border-radius: 15px;
 }
 
 .btn--signup {
-  color: #3390f0;
-  border-color: #168aad;
-  border-radius: 15px;
-  border-width: 2px;
+    background-color: #0096c7;
+    border-radius: 15px;
+    border-width: 2px;
+    margin-right: 10px;
+}
+
+.Navbar {
+    background-color: tomato;
 }

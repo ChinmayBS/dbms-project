@@ -1,5 +1,5 @@
-import "./SignUp.css";
 import React, { useState } from "react";
+import "./SignUp.css";
 export default function Signup(props) {
   // Declare a new state variable, which we'll call "count"
   const [toggleClass, setClass] = useState("signup--container");

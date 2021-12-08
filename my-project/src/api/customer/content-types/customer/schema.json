@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "singularName": "customer",
+    "pluralName": "customers",
+    "displayName": "Customer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "c_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payment.payment",
+      "mappedBy": "customer"
+    },
+    "customer_visit_shop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer-visit-shop.customer-visit-shop",
+      "inversedBy": "customer"
+    }
+  }
+}

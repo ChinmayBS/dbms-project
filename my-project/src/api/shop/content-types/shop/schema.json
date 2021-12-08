@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shops",
+  "info": {
+    "singularName": "shop",
+    "pluralName": "shops",
+    "displayName": "shop",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shop_name": {
+      "type": "string"
+    },
+    "shop_type": {
+      "type": "enumeration",
+      "enum": [
+        "chats",
+        "beverages",
+        "meals_veg",
+        "meals_non_veg"
+      ]
+    },
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "shop_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "shop_menu": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "payment_shop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payment.payment",
+      "inversedBy": "shop"
+    },
+    "shop_id": {
+      "type": "uid"
+    },
+    "shop_cuisine_name": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cuisine.cuisine",
+      "inversedBy": "shop"
+    },
+    "customer_visit_shop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer-visit-shop.customer-visit-shop",
+      "inversedBy": "shop"
+    }
+  }
+}

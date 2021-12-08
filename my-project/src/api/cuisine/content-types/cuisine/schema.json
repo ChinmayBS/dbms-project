@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cuisines",
+  "info": {
+    "singularName": "cuisine",
+    "pluralName": "cuisines",
+    "displayName": "Cuisine"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cuisine_name": {
+      "type": "string"
+    },
+    "shop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shop.shop",
+      "inversedBy": "shop_cuisine_name"
+    },
+    "customer_order_cuisine": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer-order-cuisine.customer-order-cuisine",
+      "inversedBy": "cuisine"
+    }
+  }
+}

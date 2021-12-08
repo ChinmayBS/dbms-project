@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customer_order_cuisines",
+  "info": {
+    "singularName": "customer-order-cuisine",
+    "pluralName": "customer-order-cuisines",
+    "displayName": "customer_order_cuisine"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "favourite": {
+      "type": "string"
+    },
+    "cuisine": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cuisine.cuisine",
+      "inversedBy": "customer_order_cuisine"
+    }
+  }
+}

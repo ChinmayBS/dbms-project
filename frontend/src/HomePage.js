@@ -1,7 +1,7 @@
-
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import "./HomePage.css";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const loadSignupPage = () => {
@@ -21,11 +21,11 @@ export default function HomePage() {
           customers and make your business more attractive and profitable.
         </p>
         <div>
-          <button className="btn btn--signup" onClick={loadSignupPage}>
-            Signup
+          <button className="btn btn--signup">
+            <Link to="/signup">Signup</Link>
           </button>
-          <button className="btn btn--login" onClick={loadLoginPage}>
-            Login
+          <button className="btn btn--login">
+            <Link to="/login"> Login</Link>
           </button>
         </div>
       </div>

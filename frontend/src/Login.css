@@ -210,3 +210,10 @@ button.ghost {
   letter-spacing: 15px;
   align-items: center;
 }
+
+.welcome_msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}

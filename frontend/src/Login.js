@@ -1,10 +1,14 @@
 import "./Login.css";
 import React, { useState, useEffect } from "react";
 import fetchTableData from "./lib/fetchUsersTable";
+import { Route, useHistory } from "react-router";
 
 export default function Login(props) {
+  const history = useHistory();
   // Declare a new state variable, which we'll call "count"
   const [toggleClass, setClass] = useState("login--container");
+  const [welcomeMessage, setWelcomeMessage] = useState("Welcome to our app");
+  const [alert, setAlert] = useState(" ");
 
   const changeToChefSignup = (params) => {
     setClass("login--container");
@@ -34,6 +38,16 @@ export default function Login(props) {
     });
   }, []);
 
+  const handleWrongLogin = (event) => {
+    setWelcomeMessage("You entered wrong password!!!");
+    setAlert("alert alert-warning");
+    event.target[0].value = "";
+    event.target[1].value = "";
+    setTimeout(() => {
+      setAlert(" ");
+      setWelcomeMessage("Welcome to our App!!!");
+    }, 2000);
+  };
   const shopKeeperSignin = (event) => {
     event.preventDefault();
     // console.log(event);
@@ -52,11 +66,13 @@ export default function Login(props) {
     });
 
     if (flag == 1) {
-      console.log(" Login sucesss!!!! shopkeeper");
-      //TODO: go to next page
+      // console.log(" Login sucesss!!!! shopkeeper");
+      // <Route path="/login/shop-page" component={ShopPage}></Route>;
+      history.push("/shop-page");
+
+      console.log(" Sign in sucess: ");
     } else if (flag == 0) {
-      // TODO: Wrong password display
-      console.log(" Wrong password^^^^ shopkeeper");
+      handleWrongLogin(event);
     }
   };
 
@@ -79,18 +95,16 @@ export default function Login(props) {
 
     if (flag == 1) {
       //TODO: go to next page
-      console.log(" Login sucesss!!!! customer");
+      history.push("/food-app");
     } else if (flag == 0) {
-      // TODO: Wrong password display
-      console.log(" Wrong password^^^^ customer");
+      handleWrongLogin(event);
     }
   };
 
   return (
     <div className="body">
+      <div className={alert + " welcome_msg"}>{welcomeMessage} </div>
       <div className={toggleClass} id="container">
-        <div>Welcome to our app </div>
-
         <div className="form-container sign-up-container">
           <form action="#" onSubmit={customerSignin}>
             <h1>Sign In for Customer</h1>

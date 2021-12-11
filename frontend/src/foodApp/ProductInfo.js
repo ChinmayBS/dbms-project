@@ -1,7 +1,12 @@
 import "./ProductInfo.css";
 import React from "react";
+import "../config";
+import { Redirect } from "react-router";
 
 function ProductInfo() {
+  if (!global.config.authorize.customer) {
+    return <Redirect to="/"></Redirect>;
+  }
   return (
     <div className="card-wrapper">
       <div className="card">
@@ -92,7 +97,6 @@ function ProductInfo() {
               eveniet veniam tempora fuga tenetur placeat sapiente architecto
               illum soluta consequuntur, aspernatur quidem at sequi ipsa!
             </p>
-
           </div>
 
           <div className="cart-body">
@@ -114,8 +118,8 @@ function ProductInfo() {
             </button>
           </div>
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 }
 

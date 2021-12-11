@@ -25,7 +25,7 @@ export default function HomePage() {
             <Link to="/signup">Signup</Link>
           </button>
           <button className="btn btn--login">
-            <Link to="/login"> Login</Link>
+            <Link to="/login">Login</Link>
           </button>
         </div>
       </div>

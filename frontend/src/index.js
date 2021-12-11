@@ -9,19 +9,26 @@ import About from "./About";
 import Login from "./Login";
 import Signup from "./Signup";
 import ProductInfo from "./foodApp/ProductInfo";
+import NavBar from "./NavBar";
+import FoodApp from "./foodApp/FoodApp";
+import ShopPage from "./foodApp/ShopPage";
+import Contact from "./Contact";
 
 ReactDOM.render(
   <Router>
-    <nav className="nav-bar">
-      <span className="heading">ONLINE STREET FOOD PORTAL</span>
-      <span className="btn btn--about-us">About Us</span>
-      <span className="btn btn--contact-us">Contact Us</span>
-    </nav>
+    <NavBar />
     <Route path="/" exact component={HomePage}></Route>
-    <Route path="/about" exact component={About}></Route>
+
     <Route path="/login" exact component={Login}></Route>
     <Route path="/signup" exact component={Signup}></Route>
-    <Route path="/productpage" exact component={ProductInfo}></Route>
+
+    <Route path="/shop-page" exact component={ShopPage}></Route>
+    <Route path="/food-app/productpage" exact component={ProductInfo}></Route>
+
+    <Route path="/food-app" exact component={FoodApp}></Route>
+
+    <Route path="/contact" exact component={Contact}></Route>
+    <Route path="/about" exact component={About}></Route>
   </Router>,
   document.getElementById("root")
 );

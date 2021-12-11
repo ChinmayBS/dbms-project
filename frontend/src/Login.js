@@ -1,5 +1,7 @@
 import "./Login.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import fetchTableData from "./lib/fetchUsersTable";
+
 export default function Login(props) {
   // Declare a new state variable, which we'll call "count"
   const [toggleClass, setClass] = useState("login--container");
@@ -12,11 +14,85 @@ export default function Login(props) {
     setClass("login--container right-panel-active");
   };
 
+  const [users, setUsers] = useState([]);
+  const [customers, setCustomers] = useState([]);
+
+  const appUsersTableUrl = "http://localhost:1337/api/app-users";
+  const customersTableUrl = "http://localhost:1337/api/customers";
+
+  useEffect(() => {
+    let data = fetchTableData(appUsersTableUrl);
+    data.then((resp) => {
+      setUsers(resp);
+    });
+  }, []);
+
+  useEffect(() => {
+    let data = fetchTableData(customersTableUrl);
+    data.then((resp) => {
+      setCustomers(resp);
+    });
+  }, []);
+
+  const shopKeeperSignin = (event) => {
+    event.preventDefault();
+    // console.log(event);
+    let userName, password;
+    userName = event.target[0].value;
+    password = event.target[1].value;
+    // console.log(userName, password);
+    let flag = 0;
+
+    users.forEach((user) => {
+      if (
+        user.attributes.user_name === userName &&
+        user.attributes.password === password
+      )
+        flag = 1;
+    });
+
+    if (flag == 1) {
+      console.log(" Login sucesss!!!! shopkeeper");
+      //TODO: go to next page
+    } else if (flag == 0) {
+      // TODO: Wrong password display
+      console.log(" Wrong password^^^^ shopkeeper");
+    }
+  };
+
+  const customerSignin = (event) => {
+    event.preventDefault();
+    // console.log(event);
+    let userName, password;
+    userName = event.target[0].value;
+    password = event.target[1].value;
+    // console.log(userName, password);
+    let flag = 0;
+
+    customers.forEach((customer) => {
+      if (
+        customer.attributes.name === userName &&
+        customer.attributes.password === password
+      )
+        flag = 1;
+    });
+
+    if (flag == 1) {
+      //TODO: go to next page
+      console.log(" Login sucesss!!!! customer");
+    } else if (flag == 0) {
+      // TODO: Wrong password display
+      console.log(" Wrong password^^^^ customer");
+    }
+  };
+
   return (
     <div className="body">
       <div className={toggleClass} id="container">
+        <div>Welcome to our app </div>
+
         <div className="form-container sign-up-container">
-          <form action="#">
+          <form action="#" onSubmit={customerSignin}>
             <h1>Sign In for Customer</h1>
 
             <input type="text" placeholder="Name" />
@@ -25,7 +101,7 @@ export default function Login(props) {
           </form>
         </div>
         <div className="form-container sign-in-container">
-          <form action="#">
+          <form action="#" onSubmit={shopKeeperSignin}>
             <h1>Sign In for Shop Keeper</h1>
             <input type="text" placeholder="Username" />
             <input type="password" placeholder="Password" />

@@ -1,15 +1,28 @@
 import React, { useState, useEffect } from "react";
+import fetchTableData from "./lib/fetchUsersTable";
 import axions from "axios";
 
 import "./SignUp.css";
 export default function Signup(props) {
   // Declare a new state variable, which we'll call "count"
   const [users, setUsers] = useState([]);
+  const [customers, setCustomers] = useState([]);
+
+  const appUsersTableUrl = "http://localhost:1337/api/app-users";
+  const customersTableUrl = "http://localhost:1337/api/customers";
 
   useEffect(() => {
-    axions
-      .get("http://localhost:1337/api/app-users")
-      .then((res) => setUsers(res.data.data));
+    let data = fetchTableData(appUsersTableUrl);
+    data.then((resp) => {
+      setUsers(resp);
+    });
+  }, []);
+
+  useEffect(() => {
+    let data = fetchTableData(customersTableUrl);
+    data.then((resp) => {
+      setCustomers(resp);
+    });
   }, []);
 
   const [toggleClass, setClass] = useState("signup--container");
@@ -29,7 +42,6 @@ export default function Signup(props) {
     firstName = event.target[1].value;
     lastName = event.target[2].value;
     password = event.target[3].value;
-
     let flag = 0;
     users.forEach((user) => {
       if (user.attributes.user_name === userName) flag = 1;
@@ -38,10 +50,10 @@ export default function Signup(props) {
     if (flag == 0) {
       //  TODO: user signup sucessfully
       // ADD data to strapi
-      axions.post("http://localhost:1337/api/app-users", {
+      axions.post(appUsersTableUrl, {
         data: {
-          first_name: "chinmay",
-          last_name: "b s",
+          first_name: firstName,
+          last_name: lastName,
           date_of_birth: "2002-04-11",
           user_name: userName,
         },
@@ -51,8 +63,27 @@ export default function Signup(props) {
     }
   };
 
-  const customerSignup = () => {
-    // console.log(users);
+  const customerSignup = (event) => {
+    event.preventDefault();
+    let userName, password;
+    userName = event.target[0].value;
+    password = event.target[1].value;
+    let flag = 0;
+    customers.forEach((customer) => {
+      if (customer.attributes.name === userName) flag = 1;
+    });
+    if (flag == 0) {
+      //  TODO: user signup sucessfully
+      axions.post(customersTableUrl, {
+        data: {
+          name: userName,
+          password,
+        },
+      });
+    } else {
+      // TODO: give warning that username already taken
+      console.log("username already exists");
+    }
   };
 
   return (

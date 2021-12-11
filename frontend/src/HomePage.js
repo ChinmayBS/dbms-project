@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.js";
 import "./HomePage.css";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {

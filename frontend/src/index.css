@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-bar{
+  background-color: rgb(141, 207, 238);
+  height: 8rem;
+  padding-top: 25px;
+  padding-left: 15px
+}
+
+.nav-bar .heading{
+  text-align: left;
+  font-weight: 900;
+  font-size:xx-large;
+}
+
+.nav-bar .btn{
+  width: fit-content;
+  float: right;
+  font-weight: 800;
+  font-size: x-large;
+  padding-left: 2rem;
+  padding-right:2rem;
+}

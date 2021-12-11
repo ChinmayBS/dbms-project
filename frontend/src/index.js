@@ -12,7 +12,11 @@ import ProductInfo from "./foodApp/ProductInfo";
 
 ReactDOM.render(
   <Router>
-    <nav className="nav-bar">This is nav Bar</nav>
+    <nav className="nav-bar">
+      <span className="heading">ONLINE STREET FOOD PORTAL</span>
+      <span className="btn btn--about-us">About Us</span>
+      <span className="btn btn--contact-us">Contact Us</span>
+    </nav>
     <Route path="/" exact component={HomePage}></Route>
     <Route path="/about" exact component={About}></Route>
     <Route path="/login" exact component={Login}></Route>

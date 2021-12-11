@@ -2,6 +2,8 @@ import "./Login.css";
 import React, { useState, useEffect } from "react";
 import fetchTableData from "./lib/fetchUsersTable";
 import { Route, useHistory } from "react-router";
+import "./config";
+import config from "./config";
 
 export default function Login(props) {
   const history = useHistory();
@@ -69,7 +71,7 @@ export default function Login(props) {
       // console.log(" Login sucesss!!!! shopkeeper");
       // <Route path="/login/shop-page" component={ShopPage}></Route>;
       history.push("/shop-page");
-
+      config.authorize.shopKeeper = true;
       console.log(" Sign in sucess: ");
     } else if (flag == 0) {
       handleWrongLogin(event);
@@ -94,8 +96,8 @@ export default function Login(props) {
     });
 
     if (flag == 1) {
-      //TODO: go to next page
       history.push("/food-app");
+      config.authorize.customer = true;
     } else if (flag == 0) {
       handleWrongLogin(event);
     }

@@ -5,6 +5,7 @@
     background-color: aquamarine;
     align-items: center;
     gap: 2rem;
+    width: 200vh;
     /* flex-grow: 1;
   flex-basis: 0; */
 }
@@ -16,7 +17,7 @@
 .content {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 100%;
     /*edit*/
     text-align: justify;
     gap: 12px;
@@ -53,4 +54,8 @@
 
 .Navbar {
     color: tomato;
+}
+
+.container {
+ margin: 10px,30px,10px,30px;
 }

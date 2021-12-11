@@ -1,4 +1,5 @@
 import "./ProductInfo.css";
+import React from "react";
 
 function ProductInfo() {
   return (
@@ -62,7 +63,7 @@ function ProductInfo() {
         </div>
 
         <div className="product-content">
-          <h2 className="product-title">nike shoes</h2>
+          <h2 className="shop-title">nike shoes</h2>
           <a href="#" className="product-link">
             visit nike store
           </a>
@@ -91,41 +92,30 @@ function ProductInfo() {
               eveniet veniam tempora fuga tenetur placeat sapiente architecto
               illum soluta consequuntur, aspernatur quidem at sequi ipsa!
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.
-            </p>
-            <ul>
-              <li>
-                Color: <span>Black</span>
-              </li>
-              <li>
-                Available: <span>in stock</span>
-              </li>
-              <li>
-                Category: <span>Shoes</span>
-              </li>
-              <li>
-                Shipping Area: <span>All over the world</span>
-              </li>
-              <li>
-                Shipping Fee: <span>Free</span>
-              </li>
-            </ul>
+
+          </div>
+
+          <div className="cart-body">
+            <div className="CartContainer">
+              <div className="Header">
+                <h3 className="Heading">Shopping Cart</h3>
+                <h5 className="Action">Remove all</h5>
+              </div>
+            </div>
           </div>
 
           <div className="purchase-info">
+            <button type="button" className="btn">
+              Show items
+            </button>
             <input type="number" min="0" value="1" />
             <button type="button" className="btn">
               Add to Cart <i className="fas fa-shopping-cart"></i>
             </button>
-            <button type="button" className="btn">
-              Compare
-            </button>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 

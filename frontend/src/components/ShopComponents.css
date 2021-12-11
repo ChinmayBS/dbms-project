@@ -1,0 +1,38 @@
+img {
+  height: 18rem;
+  width: 100%;
+  padding: 10px;
+  background-color: #d6e4f0;
+}
+
+/* items-stack*/
+
+.first-stack {
+  display: flex;
+}
+
+.first-stack :nth-child(1) {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.first-stack :nth-child(2) {
+  position: relative;
+  right: 5px;
+}
+
+.items-stack:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 10px #d6e4f0;
+}
+
+.shopcomponent_shop_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.shopcomponent_shop_info .shop_info {
+  display: flex;
+  justify-content: space-between;
+}

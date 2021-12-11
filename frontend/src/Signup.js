@@ -8,6 +8,9 @@ export default function Signup(props) {
   const [users, setUsers] = useState([]);
   const [customers, setCustomers] = useState([]);
 
+  const [welcomeMessage, setWelcomeMessage] = useState("Welcome to our app");
+  const [alert, setAlert] = useState(" ");
+
   const appUsersTableUrl = "http://localhost:1337/api/app-users";
   const customersTableUrl = "http://localhost:1337/api/customers";
 
@@ -35,6 +38,15 @@ export default function Signup(props) {
     setClass("signup--container right-panel-active");
   };
 
+  const handleWrongSignup = () => {
+    setWelcomeMessage("User name is already taken!!!");
+    setAlert("alert alert-warning");
+    setTimeout(() => {
+      setAlert(" ");
+      setWelcomeMessage("Welcome to our App!!!");
+    }, 2000);
+  };
+
   const shopKeeperSignUp = (event) => {
     event.preventDefault();
     let userName, firstName, lastName, password;
@@ -48,7 +60,6 @@ export default function Signup(props) {
     });
 
     if (flag == 0) {
-      //  TODO: user signup sucessfully
       // ADD data to strapi
       axions.post(appUsersTableUrl, {
         data: {
@@ -58,8 +69,20 @@ export default function Signup(props) {
           user_name: userName,
         },
       });
+
+      event.target[0].value = "";
+      event.target[1].value = "";
+      event.target[2].value = "";
+      event.target[3].value = "";
+
+      setWelcomeMessage("Account Created sucessfully):");
+      setAlert("alert alert-success");
     } else {
-      //  TODO: give warning that username already taken
+      event.target[0].value = "";
+      event.target[1].value = "";
+      event.target[2].value = "";
+      event.target[3].value = "";
+      handleWrongSignup();
     }
   };
 
@@ -80,15 +103,24 @@ export default function Signup(props) {
           password,
         },
       });
+
+      userName = event.target[0].value;
+      password = event.target[1].value;
+
+      setWelcomeMessage("Account Created sucessfully):");
+      setAlert("alert alert-success");
     } else {
       // TODO: give warning that username already taken
+      event.target[0].value = "";
+      event.target[1].value = "";
+      handleWrongSignup();
       console.log("username already exists");
     }
   };
 
   return (
     <div>
-      <p className="wlecome button">Welcome to online shop</p>
+      <div className={alert + " welcome_msg"}>{welcomeMessage} </div>
       <div className={toggleClass} id="container">
         <div className="form-container sign-up-container">
           <form action="#" onSubmit={customerSignup}>

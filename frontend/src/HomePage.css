@@ -1,23 +1,23 @@
 /* Brand color // #339af0 brand color */
 
 .home {
-    height: 100vh;
+    height: 80vh;
     background-color: aquamarine;
     align-items: center;
     gap: 2rem;
-    width: 200vh;
+    /* width: 200vh; */
     /* flex-grow: 1;
   flex-basis: 0; */
 }
 
 .img {
-    width: 2500px;
+    width: 65   00px;
 }
 
 .content {
+    width: fit-content;
     display: flex;
     flex-direction: column;
-    width: 100%;
     /*edit*/
     text-align: justify;
     gap: 12px;
@@ -56,6 +56,11 @@
     color: tomato;
 }
 
-.container {
- margin: 10px,30px,10px,30px;
+.container .d-flex{
+ margin: 10 px,30px,10px,30px;
+}
+
+.d-flex{
+    justify-content:space-evenly;
+    width: fit-content;
 }

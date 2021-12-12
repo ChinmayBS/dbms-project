@@ -28,6 +28,9 @@
       "relation": "oneToOne",
       "target": "api::customer-visit-shop.customer-visit-shop",
       "inversedBy": "customer"
+    },
+    "password": {
+      "type": "string"
     }
   }
 }

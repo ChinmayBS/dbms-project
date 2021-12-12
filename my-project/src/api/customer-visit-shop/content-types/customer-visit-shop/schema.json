@@ -27,7 +27,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::shop.shop",
-      "inversedBy": "customer_visit_shop"
+      "mappedBy": "customer_visit_shop"
     }
   }
 }

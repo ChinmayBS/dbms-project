@@ -18,7 +18,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::shop.shop",
-      "inversedBy": "shop_cuisine_name"
+      "mappedBy": "shop_cuisine_name"
     },
     "customer_order_cuisine": {
       "type": "relation",

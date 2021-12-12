@@ -3,21 +3,21 @@ import "./About.css";
 export default function About() {
 
   return (
-    <div class="container">
-      <div class="wrapper">
-        <div class="hr">
+    <div className="about-us">
+      <div className="wrapper">
+        <div className="about">
           <hr />
           <h2>Our Mission</h2>
           <hr />
         </div>
 
-        <p class="mission-txt">"To Organize street vending service"</p>
+        <p className="mission-txt">"To Organize street vending service"</p>
       </div>
 
-      <div class="wrapper">
+      <div className="wrapper">
         <h2>About</h2>
         <div>
-          <img
+          <img className="about-us-img"
             src="https://vidyasheela.com/web-contents/website-components/About-Us-Pages/responsive-about-us-page-html/teaching.png"
             alt="img"
           />
@@ -50,10 +50,10 @@ export default function About() {
         </div>
       </div>
 
-      <div class="wrapper">
+      <div className="wrapper">
         <h2>Our Team</h2>
-        <div class="faculties">
-          <div class="unit">
+        <div className="faculties">
+          <div className="unit">
             <img src="" alt="" />
             <p>Athreya V Shet</p>
             <p>
@@ -61,7 +61,7 @@ export default function About() {
               unde aliquid laborum voluptatum distinctio nobis?'
             </p>
           </div>
-          <div class="unit">
+          <div className="unit">
             <img
               src="https://vidyasheela.com/web-contents/website-components/About-Us-Pages/responsive-about-us-page-html/Principal.jpg"
               alt=""
@@ -72,7 +72,7 @@ export default function About() {
               unde aliquid laborum voluptatum distinctio nobis?'
             </p>
           </div>
-          <div class="unit">
+          <div className="unit">
             <img
               src="https://vidyasheela.com/web-contents/website-components/About-Us-Pages/responsive-about-us-page-html/vice-principal.jpg"
               alt=""
@@ -87,5 +87,5 @@ export default function About() {
       </div>
     </div>
   );
->>>>>>> e7ee9fdc2d77d973a93190f1c5a291b9b43a89c4
+
 }

@@ -21,18 +21,6 @@
     "date_of_birth": {
       "type": "date"
     },
-    "app_users": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::app-user.app-user",
-      "mappedBy": "admin_id"
-    },
-    "admin_id": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::app-user.app-user",
-      "inversedBy": "app_users"
-    },
     "phone_no": {
       "type": "relation",
       "relation": "oneToOne",
@@ -46,6 +34,12 @@
     },
     "password": {
       "type": "string"
+    },
+    "shop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shop.shop",
+      "inversedBy": "app_user"
     }
   }
 }

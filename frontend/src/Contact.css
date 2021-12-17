@@ -10,7 +10,7 @@
   color: #0096c7;
   text-align: center;
 }
- .contact-us .row h4 {
+.contact-us .row h4 {
   font-family: "Roboto", sans-serif, "arial";
   font-weight: 600;
   font-size: 20px;
@@ -40,10 +40,10 @@ textarea:valid ~ label {
   border-radius: 4px;
 }
 
-.styled-input .wide{
+.styled-input .wide {
   width: auto;
 }
-  /* 
+/* 
   @media only screen and (max-width: 768px) {
     .contact-us .styled-input {
       width: 100%;
@@ -61,19 +61,20 @@ textarea:valid ~ label {
   pointer-events: none;
 }
 
- #wide{
+#wide {
   width: 950px;
-  text-align: center    ;
-  width: 94%; 
+  text-align: center;
+  width: 94%;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 30px;
   border: 0;
-  width:fit-content;
+  width: fit-content;
   font-size: 1rem;
   background-color: white;
-  color: white;
+  color: rgb(158, 134, 134);
   border-radius: 4px;
 }
 
@@ -126,6 +127,6 @@ textarea:focus ~ span {
   }
 }
 
-.full-name{
-  width:100%;
+.full-name {
+  width: 100%;
 }

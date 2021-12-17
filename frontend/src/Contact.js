@@ -14,27 +14,28 @@ export default function Contact() {
       </div>
       <div className="row input-container">
         {/* <div className="col-xs-12"> */}
-          <div className="styled-input wide" id="wide">
-            <input className="full-name" type="text" required placeholder="Full Name" />
-            
-          </div>
+        <div className="styled-input wide" id="wide">
+          <input
+            className="full-name"
+            type="text"
+            required
+            placeholder="Full Name"
+          />
+        </div>
         {/* </div> */}
         <div className="col-md-6 col-sm-12">
-          <div className="styled-input">
-            <input type="text" required />
-            <label>Address</label>
+          <div className="styled-input wide" id="wide">
+            <input type="text" required placeholder="Address" />
           </div>
         </div>
         <div className="col-md-6 col-sm-12">
           <div className="styled-input">
-            <input type="text" required />
-            <label>Phone Number</label>
+            <input type="text" required placeholder="Phone Number" />
           </div>
         </div>
         <div className="col-xs-12">
           <div className="styled-input wide" id="wide">
-            <textarea required></textarea>
-            <label>Message</label>
+            <textarea placeholder="Message" required></textarea>
           </div>
         </div>
         <div className="col-xs-12">
@@ -43,5 +44,4 @@ export default function Contact() {
       </div>
     </div>
   );
-
 }

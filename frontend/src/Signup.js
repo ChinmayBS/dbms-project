@@ -67,6 +67,7 @@ export default function Signup(props) {
           last_name: lastName,
           date_of_birth: "2002-04-11",
           user_name: userName,
+          password: password,
         },
       });
 
@@ -96,7 +97,6 @@ export default function Signup(props) {
       if (customer.attributes.name === userName) flag = 1;
     });
     if (flag == 0) {
-      //  TODO: user signup sucessfully
       axions.post(customersTableUrl, {
         data: {
           name: userName,
@@ -110,7 +110,6 @@ export default function Signup(props) {
       setWelcomeMessage("Account Created sucessfully):");
       setAlert("alert alert-success");
     } else {
-      // TODO: give warning that username already taken
       event.target[0].value = "";
       event.target[1].value = "";
       handleWrongSignup();
@@ -126,19 +125,19 @@ export default function Signup(props) {
           <form action="#" onSubmit={customerSignup}>
             <h1>Sign Up for Customer</h1>
 
-            <input type="text" placeholder="Name" />
-            <input type="password" placeholder="Password" />
+            <input required type="text" placeholder="Name" />
+            <input required type="password" placeholder="Password" />
             <button>Sign Up</button>
           </form>
         </div>
         <div className="form-container sign-in-container">
           <form action="#" onSubmit={shopKeeperSignUp}>
             <h1>Sign Up for Shop Keeper</h1>
-            <input type="text" placeholder="Username" />
+            <input required type="text" placeholder="Username" />
 
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-            <input type="password" placeholder="Password" />
+            <input required type="text" placeholder="First Name" />
+            <input required type="text" placeholder="Last Name" />
+            <input required type="password" placeholder="Password" />
 
             <button>Sign Up</button>
           </form>

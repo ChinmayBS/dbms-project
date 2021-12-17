@@ -1,10 +1,10 @@
- .about-us {
+.about-us {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: aquamarine;
   margin: 0;
   padding: 0;
 }
- 
+
 .about-us .navbar {
   display: flex;
   width: 100%;
@@ -53,11 +53,6 @@
   margin-top: 0;
 }
 
-.about-us div img {
-  width: 150px;
-  filter: drop-shadow(0 10px 5px black);
-}
-
 .about-us p {
   text-align: justify;
 }
@@ -102,7 +97,12 @@
   }
 }
 
-.about-us-img{
-  width: 150px;
+.about-us-img {
+  width: 25%;
+  height: auto;
   filter: drop-shadow(0 10px 5px black);
+  background-color: inherit;
+
+  margin-left: auto;
+  margin-right: auto;
 }

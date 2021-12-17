@@ -58,21 +58,21 @@ export default function Login(props) {
     password = event.target[1].value;
     // console.log(userName, password);
     let flag = 0;
-
+    let userId = 0;
     users.forEach((user) => {
       if (
         user.attributes.user_name === userName &&
         user.attributes.password === password
-      )
+      ) {
+        userId = user.id;
         flag = 1;
+      }
     });
 
     if (flag == 1) {
-      // console.log(" Login sucesss!!!! shopkeeper");
-      // <Route path="/login/shop-page" component={ShopPage}></Route>;
       history.push("/shop-page");
       config.authorize.shopKeeper = true;
-      console.log(" Sign in sucess: ");
+      config.authorize.shopKeeperId = userId;
     } else if (flag == 0) {
       handleWrongLogin(event);
     }
@@ -111,16 +111,16 @@ export default function Login(props) {
           <form action="#" onSubmit={customerSignin}>
             <h1>Sign In for Customer</h1>
 
-            <input type="text" placeholder="Name" />
-            <input type="password" placeholder="Password" />
+            <input required type="text" placeholder="Name" />
+            <input required type="password" placeholder="Password" />
             <button>Sign In</button>
           </form>
         </div>
         <div className="form-container sign-in-container">
           <form action="#" onSubmit={shopKeeperSignin}>
             <h1>Sign In for Shop Keeper</h1>
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
+            <input required type="text" placeholder="Username" />
+            <input required type="password" placeholder="Password" />
 
             <button>Sign In</button>
           </form>

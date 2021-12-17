@@ -1,7 +1,6 @@
 import React from "react";
 import "./About.css";
 export default function About() {
-
   return (
     <div className="about-us">
       <div className="wrapper">
@@ -17,7 +16,8 @@ export default function About() {
       <div className="wrapper">
         <h2>About</h2>
         <div>
-          <img className="about-us-img"
+          <img
+            className="about-us-img"
             src="https://vidyasheela.com/web-contents/website-components/About-Us-Pages/responsive-about-us-page-html/teaching.png"
             alt="img"
           />
@@ -77,7 +77,7 @@ export default function About() {
               src="https://vidyasheela.com/web-contents/website-components/About-Us-Pages/responsive-about-us-page-html/vice-principal.jpg"
               alt=""
             />
-            <p>Lawn Sethi, Vice Principal</p>
+            <p>Avyakth</p>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
               unde aliquid laborum voluptatum distinctio nobis?'
@@ -87,5 +87,4 @@ export default function About() {
       </div>
     </div>
   );
-
 }

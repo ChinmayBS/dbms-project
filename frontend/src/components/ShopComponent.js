@@ -1,16 +1,19 @@
 import "./ShopComponents.css";
+import React, { useState } from "react";
 
-export default function ShopComponent() {
+export default function ShopComponent(props) {
+  const [shop, setShop] = useState(props);
+  const appUrl = "http://localhost:1337";
   return (
     <div className="items-stack" id="items-list">
-      <img src="https://www.linkpicture.com/q/WhatsApp-Image-2021-11-01-at-6.11.44-PM.jpeg" />
-      <p class="shopcomponent_shop_info">
+      <img src={appUrl + shop.shopImage} />
+      <p className="shopcomponent_shop_info">
         <div className="shop_info">
-          <div className="shop_name">Shop Name is displyed here</div>
-          <div className="shop_tag">tag: veg</div>
+          <div className="shop_name">Shop Name: {shop.shopName}</div>
+          <div className="shop_tag">tag: {shop.shopType}</div>
         </div>
         <div className="shop_info">
-          <div className="rating">Rating: ***** </div>
+          <div className="rating">Rating: {shop.rating} </div>
           <div className="phone_no">Phone number: 9019284182</div>
         </div>
       </p>
